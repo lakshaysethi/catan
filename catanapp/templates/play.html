@@ -37,21 +37,32 @@ sethi has joined
 
 
 <style>
-    .hexagon{
-        height: 800px;
-        width: 800px;
+    .hexagon,.available-objects{
+       min-height: 800px;
         border: solid black 2px;
     }
 </style>
 
 <div class="catan-game container">
+<div class="row">
 
-
-
-    <div class="hexagon">
-
-
+    <div class="available-objects col-2">
+        {% for dropable in imageObjects%}
+        <div class="dropable">
+            <img src="{{dropable.image.url}}" alt="{{dropable.name}}">
+            <small>{{dropable.name}}</small>
+        </div>
+        
+        
+        {% endfor %}
     </div>
+    
+    
+    <div class="hexagon col-10">
+        
+        
+    </div>
+</div>
 
 
 
