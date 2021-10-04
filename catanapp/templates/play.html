@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 
@@ -47,9 +47,10 @@ sethi has joined
 <div class="row">
 
     <div class="available-objects col-2">
-        {% for dropable in imageObjects%}
+        {% for url in imageObjectUrls %}
         <div class="dropable">
-            <img src="{{dropable.image.url}}" alt="{{dropable.name}}">
+            <img src="{% static url %}" alt="{{dropable.name}}">
+
             <small>{{dropable.name}}</small>
         </div>
         
